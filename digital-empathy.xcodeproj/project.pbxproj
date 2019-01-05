@@ -1,0 +1,497 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9BC6E80321E0088F00B19A26 /* EmotionsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC6E80221E0088F00B19A26 /* EmotionsCollectionViewController.swift */; };
+		9BC6E80521E00F7200B19A26 /* StretchyFooterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC6E80421E00F7200B19A26 /* StretchyFooterViewController.swift */; };
+		9BC6E80721E0119200B19A26 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC6E80621E0119200B19A26 /* UIView+Layout.swift */; };
+		9BC6E80921E0185600B19A26 /* EmotionalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC6E80821E0185600B19A26 /* EmotionalState.swift */; };
+		9BC6E80B21E018AB00B19A26 /* EmpathyListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC6E80A21E018AB00B19A26 /* EmpathyListener.swift */; };
+		9BD9BF7721DFFB1B00D17882 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD9BF7621DFFB1B00D17882 /* AppDelegate.swift */; };
+		9BD9BF7C21DFFB1B00D17882 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BD9BF7A21DFFB1B00D17882 /* Main.storyboard */; };
+		9BD9BF7E21DFFB1D00D17882 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BD9BF7D21DFFB1D00D17882 /* Assets.xcassets */; };
+		9BD9BF8121DFFB1D00D17882 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BD9BF7F21DFFB1D00D17882 /* LaunchScreen.storyboard */; };
+		9BD9BF8C21DFFB1D00D17882 /* digital_empathyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD9BF8B21DFFB1D00D17882 /* digital_empathyTests.swift */; };
+		9BD9BF9721DFFBDD00D17882 /* EmotionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD9BF9621DFFBDC00D17882 /* EmotionCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9BD9BF8821DFFB1D00D17882 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9BD9BF6B21DFFB1B00D17882 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9BD9BF7221DFFB1B00D17882;
+			remoteInfo = "digital-empathy";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9BC6E80221E0088F00B19A26 /* EmotionsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionsCollectionViewController.swift; sourceTree = "<group>"; };
+		9BC6E80421E00F7200B19A26 /* StretchyFooterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StretchyFooterViewController.swift; sourceTree = "<group>"; };
+		9BC6E80621E0119200B19A26 /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
+		9BC6E80821E0185600B19A26 /* EmotionalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionalState.swift; sourceTree = "<group>"; };
+		9BC6E80A21E018AB00B19A26 /* EmpathyListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmpathyListener.swift; sourceTree = "<group>"; };
+		9BD9BF7321DFFB1B00D17882 /* digital-empathy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "digital-empathy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BD9BF7621DFFB1B00D17882 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9BD9BF7B21DFFB1B00D17882 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9BD9BF7D21DFFB1D00D17882 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9BD9BF8021DFFB1D00D17882 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9BD9BF8221DFFB1D00D17882 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9BD9BF8721DFFB1D00D17882 /* digital-empathyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "digital-empathyTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BD9BF8B21DFFB1D00D17882 /* digital_empathyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = digital_empathyTests.swift; sourceTree = "<group>"; };
+		9BD9BF8D21DFFB1D00D17882 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9BD9BF9621DFFBDC00D17882 /* EmotionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionCell.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9BD9BF7021DFFB1B00D17882 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BD9BF8421DFFB1D00D17882 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9BD9BF6A21DFFB1B00D17882 = {
+			isa = PBXGroup;
+			children = (
+				9BD9BF7521DFFB1B00D17882 /* digital-empathy */,
+				9BD9BF8A21DFFB1D00D17882 /* digital-empathyTests */,
+				9BD9BF7421DFFB1B00D17882 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9BD9BF7421DFFB1B00D17882 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9BD9BF7321DFFB1B00D17882 /* digital-empathy.app */,
+				9BD9BF8721DFFB1D00D17882 /* digital-empathyTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9BD9BF7521DFFB1B00D17882 /* digital-empathy */ = {
+			isa = PBXGroup;
+			children = (
+				9BD9BF7621DFFB1B00D17882 /* AppDelegate.swift */,
+				9BD9BF7A21DFFB1B00D17882 /* Main.storyboard */,
+				9BC6E80821E0185600B19A26 /* EmotionalState.swift */,
+				9BC6E80A21E018AB00B19A26 /* EmpathyListener.swift */,
+				9BD9BF7D21DFFB1D00D17882 /* Assets.xcassets */,
+				9BD9BF7F21DFFB1D00D17882 /* LaunchScreen.storyboard */,
+				9BD9BF8221DFFB1D00D17882 /* Info.plist */,
+				9BD9BF9621DFFBDC00D17882 /* EmotionCell.swift */,
+				9BC6E80221E0088F00B19A26 /* EmotionsCollectionViewController.swift */,
+				9BC6E80421E00F7200B19A26 /* StretchyFooterViewController.swift */,
+				9BC6E80621E0119200B19A26 /* UIView+Layout.swift */,
+			);
+			path = "digital-empathy";
+			sourceTree = "<group>";
+		};
+		9BD9BF8A21DFFB1D00D17882 /* digital-empathyTests */ = {
+			isa = PBXGroup;
+			children = (
+				9BD9BF8B21DFFB1D00D17882 /* digital_empathyTests.swift */,
+				9BD9BF8D21DFFB1D00D17882 /* Info.plist */,
+			);
+			path = "digital-empathyTests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9BD9BF7221DFFB1B00D17882 /* digital-empathy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9BD9BF9021DFFB1D00D17882 /* Build configuration list for PBXNativeTarget "digital-empathy" */;
+			buildPhases = (
+				9BD9BF6F21DFFB1B00D17882 /* Sources */,
+				9BD9BF7021DFFB1B00D17882 /* Frameworks */,
+				9BD9BF7121DFFB1B00D17882 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "digital-empathy";
+			productName = "digital-empathy";
+			productReference = 9BD9BF7321DFFB1B00D17882 /* digital-empathy.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9BD9BF8621DFFB1D00D17882 /* digital-empathyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9BD9BF9321DFFB1D00D17882 /* Build configuration list for PBXNativeTarget "digital-empathyTests" */;
+			buildPhases = (
+				9BD9BF8321DFFB1D00D17882 /* Sources */,
+				9BD9BF8421DFFB1D00D17882 /* Frameworks */,
+				9BD9BF8521DFFB1D00D17882 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9BD9BF8921DFFB1D00D17882 /* PBXTargetDependency */,
+			);
+			name = "digital-empathyTests";
+			productName = "digital-empathyTests";
+			productReference = 9BD9BF8721DFFB1D00D17882 /* digital-empathyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9BD9BF6B21DFFB1B00D17882 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = kezzi.co;
+				TargetAttributes = {
+					9BD9BF7221DFFB1B00D17882 = {
+						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+					9BD9BF8621DFFB1D00D17882 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 9BD9BF7221DFFB1B00D17882;
+					};
+				};
+			};
+			buildConfigurationList = 9BD9BF6E21DFFB1B00D17882 /* Build configuration list for PBXProject "digital-empathy" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9BD9BF6A21DFFB1B00D17882;
+			productRefGroup = 9BD9BF7421DFFB1B00D17882 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9BD9BF7221DFFB1B00D17882 /* digital-empathy */,
+				9BD9BF8621DFFB1D00D17882 /* digital-empathyTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9BD9BF7121DFFB1B00D17882 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BD9BF8121DFFB1D00D17882 /* LaunchScreen.storyboard in Resources */,
+				9BD9BF7E21DFFB1D00D17882 /* Assets.xcassets in Resources */,
+				9BD9BF7C21DFFB1B00D17882 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BD9BF8521DFFB1D00D17882 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9BD9BF6F21DFFB1B00D17882 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BD9BF7721DFFB1B00D17882 /* AppDelegate.swift in Sources */,
+				9BC6E80721E0119200B19A26 /* UIView+Layout.swift in Sources */,
+				9BC6E80321E0088F00B19A26 /* EmotionsCollectionViewController.swift in Sources */,
+				9BC6E80521E00F7200B19A26 /* StretchyFooterViewController.swift in Sources */,
+				9BC6E80921E0185600B19A26 /* EmotionalState.swift in Sources */,
+				9BC6E80B21E018AB00B19A26 /* EmpathyListener.swift in Sources */,
+				9BD9BF9721DFFBDD00D17882 /* EmotionCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BD9BF8321DFFB1D00D17882 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BD9BF8C21DFFB1D00D17882 /* digital_empathyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9BD9BF8921DFFB1D00D17882 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9BD9BF7221DFFB1B00D17882 /* digital-empathy */;
+			targetProxy = 9BD9BF8821DFFB1D00D17882 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9BD9BF7A21DFFB1B00D17882 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9BD9BF7B21DFFB1B00D17882 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9BD9BF7F21DFFB1D00D17882 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9BD9BF8021DFFB1D00D17882 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9BD9BF8E21DFFB1D00D17882 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9BD9BF8F21DFFB1D00D17882 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9BD9BF9121DFFB1D00D17882 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 68WTNC8XPF;
+				INFOPLIST_FILE = "digital-empathy/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "co.kezzi.digital-empathy";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9BD9BF9221DFFB1D00D17882 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 68WTNC8XPF;
+				INFOPLIST_FILE = "digital-empathy/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "co.kezzi.digital-empathy";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		9BD9BF9421DFFB1D00D17882 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 68WTNC8XPF;
+				INFOPLIST_FILE = "digital-empathyTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "co.kezzi.digital-empathyTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/digital-empathy.app/digital-empathy";
+			};
+			name = Debug;
+		};
+		9BD9BF9521DFFB1D00D17882 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 68WTNC8XPF;
+				INFOPLIST_FILE = "digital-empathyTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "co.kezzi.digital-empathyTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/digital-empathy.app/digital-empathy";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9BD9BF6E21DFFB1B00D17882 /* Build configuration list for PBXProject "digital-empathy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9BD9BF8E21DFFB1D00D17882 /* Debug */,
+				9BD9BF8F21DFFB1D00D17882 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9BD9BF9021DFFB1D00D17882 /* Build configuration list for PBXNativeTarget "digital-empathy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9BD9BF9121DFFB1D00D17882 /* Debug */,
+				9BD9BF9221DFFB1D00D17882 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9BD9BF9321DFFB1D00D17882 /* Build configuration list for PBXNativeTarget "digital-empathyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9BD9BF9421DFFB1D00D17882 /* Debug */,
+				9BD9BF9521DFFB1D00D17882 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9BD9BF6B21DFFB1B00D17882 /* Project object */;
+}
