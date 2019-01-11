@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class EmotionsCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     var emotion: EmotionalState = EmotionalState()
@@ -30,13 +31,21 @@ class EmotionsCollectionViewController: UICollectionViewController, UICollection
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "emotion-cell", for: indexPath) as! EmotionCell
         
         cell.emoji = EmotionalState.emojis[indexPath.row]
+        if emotion.emojiIndex == indexPath.row {
+            cell.isSelected = true
+        } else {
+            cell.isSelected = false
+        }
         
         return cell
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.collectionView .selectItem(at: indexPath, animated: true, scrollPosition: .top)
-        
         emotion.emojiIndex = indexPath.row
+
+        self.collectionView.reloadData()
+
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
     }
 }
+

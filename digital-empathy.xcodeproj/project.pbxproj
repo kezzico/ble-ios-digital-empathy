@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9BBE79D421E423610062877B /* HomeIndicatorConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBE79D321E423610062877B /* HomeIndicatorConstraint.swift */; };
 		9BC6E80321E0088F00B19A26 /* EmotionsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC6E80221E0088F00B19A26 /* EmotionsCollectionViewController.swift */; };
 		9BC6E80521E00F7200B19A26 /* StretchyFooterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC6E80421E00F7200B19A26 /* StretchyFooterViewController.swift */; };
 		9BC6E80721E0119200B19A26 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC6E80621E0119200B19A26 /* UIView+Layout.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9BBE79D321E423610062877B /* HomeIndicatorConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeIndicatorConstraint.swift; sourceTree = "<group>"; };
 		9BC6E80221E0088F00B19A26 /* EmotionsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionsCollectionViewController.swift; sourceTree = "<group>"; };
 		9BC6E80421E00F7200B19A26 /* StretchyFooterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StretchyFooterViewController.swift; sourceTree = "<group>"; };
 		9BC6E80621E0119200B19A26 /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				9BC6E80221E0088F00B19A26 /* EmotionsCollectionViewController.swift */,
 				9BC6E80421E00F7200B19A26 /* StretchyFooterViewController.swift */,
 				9BC6E80621E0119200B19A26 /* UIView+Layout.swift */,
+				9BBE79D321E423610062877B /* HomeIndicatorConstraint.swift */,
 			);
 			path = "digital-empathy";
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 				9BD9BF7721DFFB1B00D17882 /* AppDelegate.swift in Sources */,
 				9BC6E80721E0119200B19A26 /* UIView+Layout.swift in Sources */,
 				9BC6E80321E0088F00B19A26 /* EmotionsCollectionViewController.swift in Sources */,
+				9BBE79D421E423610062877B /* HomeIndicatorConstraint.swift in Sources */,
 				9BC6E80521E00F7200B19A26 /* StretchyFooterViewController.swift in Sources */,
 				9BC6E80921E0185600B19A26 /* EmotionalState.swift in Sources */,
 				9BC6E80B21E018AB00B19A26 /* EmpathyListener.swift in Sources */,
@@ -396,7 +400,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "co.kezzi.digital-empathy";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -415,7 +419,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "co.kezzi.digital-empathy";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
