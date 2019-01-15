@@ -16,6 +16,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         EmpathyListener.shared.listen()
+        
+        var vc:UIViewController!
+        if application.firstLaunch {
+            vc = UIStoryboard(name: "Setup", bundle: nil).instantiateInitialViewController()
+        } else {
+            vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+        }
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window?.rootViewController = vc
+        self.window?.makeKeyAndVisible()
+        
         // Override point for customization after application launch.
         return true
     }

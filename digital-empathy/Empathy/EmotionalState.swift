@@ -10,6 +10,7 @@ import UIKit
 import CoreBluetooth
 
 class EmotionalState: NSObject {
+    static var shared: EmotionalState = EmotionalState()
     static var emojis = ["😋","😁","😍",
                          "🧐","🙂","😔",
                          "😩","😡","😰"]
@@ -24,6 +25,7 @@ class EmotionalState: NSObject {
             }
         }
     }
+    
 
     private let serviceUUID = CBUUID(string: "110E4DE6-C596-4B39-8397-FF35B2AF79E7")
     private let characteristicUUID = CBUUID(string: "DA18")
@@ -37,6 +39,28 @@ class EmotionalState: NSObject {
         
         self.peripheral = CBPeripheralManager(delegate: self, queue: nil, options: nil)
     }
+    
+    func stopBroadcasting() {
+        NotificationCenter.default.post(name: NSNotification.Name("broadcast-off"), object: nil)
+        
+        guard peripheral.state == .poweredOn else { return }
+        self.peripheral.stopAdvertising()
+    }
+    
+    func startBroadcasting() {
+        guard peripheral.state == .poweredOn else {
+            NotificationCenter.default.post(name: NSNotification.Name("broadcast-off"), object: nil)
+            return
+        }
+        
+        let options: [String : Any] = [
+            CBAdvertisementDataLocalNameKey: "emotional-state",
+            CBAdvertisementDataServiceUUIDsKey: [self.serviceUUID]]
+        
+        self.peripheral.startAdvertising(options)
+        
+        NotificationCenter.default.post(name: NSNotification.Name("broadcast-on"), object: nil)
+    }
 
 }
 
@@ -45,6 +69,7 @@ class EmotionalState: NSObject {
 extension EmotionalState: CBPeripheralManagerDelegate {
     func peripheralManagerDidUpdateState(_ peripheral: CBPeripheralManager) {
         if peripheral.state != .poweredOn {
+            NotificationCenter.default.post(name: NSNotification.Name("broadcast-off"), object: nil)
             return
         }
 
@@ -61,12 +86,6 @@ extension EmotionalState: CBPeripheralManagerDelegate {
     }
 
     func peripheralManager(_ peripheral: CBPeripheralManager, didAdd service: CBService, error: Error?) {
-        let options: [String : Any] = [
-            CBAdvertisementDataLocalNameKey: "emotional-state",
-            CBAdvertisementDataServiceUUIDsKey: [self.serviceUUID]]
-        
-        self.peripheral.startAdvertising(options)
-        
-        print("advertising...")
+        self.startBroadcasting()
     }
 }

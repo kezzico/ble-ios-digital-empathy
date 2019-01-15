@@ -38,16 +38,16 @@ class EmpathyListener: NSObject {
         let center = UNUserNotificationCenter.current()
         let content = UNMutableNotificationContent()
         
-        content.title = "Empathy Alert"
-        content.body = "\(emoji)"
+        content.title = "\(emoji)"
+        content.body = "\(emoji)\(emoji)\(emoji)"
         content.sound = UNNotificationSound.default
         
         let identifier = UUID().uuidString
         let request = UNNotificationRequest(identifier: identifier, content: content, trigger: nil)
         
-        center.add(request) { err in
-
-        }
+        center.add(request) { err in }
+        
+        NotificationCenter.default.post(name: NSNotification.Name("empathy-update"), object: nil)
 
     }
     
@@ -78,14 +78,17 @@ extension EmpathyListener: CBCentralManagerDelegate {
             print("\(err.localizedDescription)")
         }
     }
+    ////
     
     internal func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
         if let err = error {
             print("\(err.localizedDescription)")
             return
         }
+        
+        self.emotions.removeValue(forKey: peripheral.identifier.uuidString)
+        NotificationCenter.default.post(name: NSNotification.Name("empathy-update"), object: nil)
     }
-    //////
 
 }
 
@@ -141,9 +144,7 @@ extension EmpathyListener: CBPeripheralDelegate {
         }
     }
     
-    func peripheral(_ peripheral: CBPeripheral, didModifyServices invalidatedServices: [CBService]) {
-        
-    }
+    
 }
 
 extension CBPeripheral {

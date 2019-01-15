@@ -8,7 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		9BBE79D421E423610062877B /* HomeIndicatorConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBE79D321E423610062877B /* HomeIndicatorConstraint.swift */; };
-		9BC6E80321E0088F00B19A26 /* EmotionsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC6E80221E0088F00B19A26 /* EmotionsCollectionViewController.swift */; };
+		9BBE79DC21ED41360062877B /* Setup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BBE79DB21ED41360062877B /* Setup.storyboard */; };
+		9BBE79DE21ED41DD0062877B /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBE79DD21ED41DD0062877B /* UIApplication+Extensions.swift */; };
+		9BBE79E021ED43210062877B /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBE79DF21ED43210062877B /* DateExtensions.swift */; };
+		9BBE79E221ED45520062877B /* HeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBE79E121ED45520062877B /* HeaderViewController.swift */; };
+		9BBE79E421ED46110062877B /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBE79E321ED46110062877B /* MenuController.swift */; };
+		9BBE79E721ED46A70062877B /* HamburgerMenuItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BBE79E621ED46A70062877B /* HamburgerMenuItem.xib */; };
+		9BBE79E921ED46DE0062877B /* HamburgerMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BBE79E821ED46DE0062877B /* HamburgerMenu.xib */; };
+		9BBE79EB21ED4BBA0062877B /* HamburgerMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBE79EA21ED4BBA0062877B /* HamburgerMenuItem.swift */; };
+		9BBE79ED21ED4EDC0062877B /* BroadcastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBE79EC21ED4EDC0062877B /* BroadcastView.swift */; };
+		9BBE79F021ED58740062877B /* EmpathyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBE79EF21ED58740062877B /* EmpathyTableViewController.swift */; };
+		9BBE79F221ED59040062877B /* EmotionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBE79F121ED59040062877B /* EmotionCell.swift */; };
 		9BC6E80521E00F7200B19A26 /* StretchyFooterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC6E80421E00F7200B19A26 /* StretchyFooterViewController.swift */; };
 		9BC6E80721E0119200B19A26 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC6E80621E0119200B19A26 /* UIView+Layout.swift */; };
 		9BC6E80921E0185600B19A26 /* EmotionalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC6E80821E0185600B19A26 /* EmotionalState.swift */; };
@@ -18,7 +28,6 @@
 		9BD9BF7E21DFFB1D00D17882 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BD9BF7D21DFFB1D00D17882 /* Assets.xcassets */; };
 		9BD9BF8121DFFB1D00D17882 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BD9BF7F21DFFB1D00D17882 /* LaunchScreen.storyboard */; };
 		9BD9BF8C21DFFB1D00D17882 /* digital_empathyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD9BF8B21DFFB1D00D17882 /* digital_empathyTests.swift */; };
-		9BD9BF9721DFFBDD00D17882 /* EmotionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD9BF9621DFFBDC00D17882 /* EmotionCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +42,17 @@
 
 /* Begin PBXFileReference section */
 		9BBE79D321E423610062877B /* HomeIndicatorConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeIndicatorConstraint.swift; sourceTree = "<group>"; };
-		9BC6E80221E0088F00B19A26 /* EmotionsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionsCollectionViewController.swift; sourceTree = "<group>"; };
+		9BBE79DB21ED41360062877B /* Setup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setup.storyboard; sourceTree = "<group>"; };
+		9BBE79DD21ED41DD0062877B /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
+		9BBE79DF21ED43210062877B /* DateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
+		9BBE79E121ED45520062877B /* HeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewController.swift; sourceTree = "<group>"; };
+		9BBE79E321ED46110062877B /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		9BBE79E621ED46A70062877B /* HamburgerMenuItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HamburgerMenuItem.xib; sourceTree = "<group>"; };
+		9BBE79E821ED46DE0062877B /* HamburgerMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HamburgerMenu.xib; sourceTree = "<group>"; };
+		9BBE79EA21ED4BBA0062877B /* HamburgerMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerMenuItem.swift; sourceTree = "<group>"; };
+		9BBE79EC21ED4EDC0062877B /* BroadcastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcastView.swift; sourceTree = "<group>"; };
+		9BBE79EF21ED58740062877B /* EmpathyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmpathyTableViewController.swift; sourceTree = "<group>"; };
+		9BBE79F121ED59040062877B /* EmotionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionCell.swift; sourceTree = "<group>"; };
 		9BC6E80421E00F7200B19A26 /* StretchyFooterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StretchyFooterViewController.swift; sourceTree = "<group>"; };
 		9BC6E80621E0119200B19A26 /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		9BC6E80821E0185600B19A26 /* EmotionalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionalState.swift; sourceTree = "<group>"; };
@@ -47,7 +66,6 @@
 		9BD9BF8721DFFB1D00D17882 /* digital-empathyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "digital-empathyTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BD9BF8B21DFFB1D00D17882 /* digital_empathyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = digital_empathyTests.swift; sourceTree = "<group>"; };
 		9BD9BF8D21DFFB1D00D17882 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9BD9BF9621DFFBDC00D17882 /* EmotionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +86,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9BBE79D721ED40C70062877B /* Setup */ = {
+			isa = PBXGroup;
+			children = (
+				9BBE79DB21ED41360062877B /* Setup.storyboard */,
+			);
+			path = Setup;
+			sourceTree = "<group>";
+		};
+		9BBE79D921ED40D60062877B /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				9BD9BF7A21DFFB1B00D17882 /* Main.storyboard */,
+				9BBE79E121ED45520062877B /* HeaderViewController.swift */,
+				9BBE79EC21ED4EDC0062877B /* BroadcastView.swift */,
+				9BBE79EF21ED58740062877B /* EmpathyTableViewController.swift */,
+				9BBE79F121ED59040062877B /* EmotionCell.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		9BBE79DA21ED40F90062877B /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				9BBE79E521ED46550062877B /* Menu */,
+				9BC6E80421E00F7200B19A26 /* StretchyFooterViewController.swift */,
+				9BC6E80621E0119200B19A26 /* UIView+Layout.swift */,
+				9BBE79D321E423610062877B /* HomeIndicatorConstraint.swift */,
+				9BBE79DD21ED41DD0062877B /* UIApplication+Extensions.swift */,
+				9BBE79DF21ED43210062877B /* DateExtensions.swift */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		9BBE79E521ED46550062877B /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				9BBE79E321ED46110062877B /* MenuController.swift */,
+				9BBE79E621ED46A70062877B /* HamburgerMenuItem.xib */,
+				9BBE79EA21ED4BBA0062877B /* HamburgerMenuItem.swift */,
+				9BBE79E821ED46DE0062877B /* HamburgerMenu.xib */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		9BBE79EE21ED56390062877B /* Empathy */ = {
+			isa = PBXGroup;
+			children = (
+				9BC6E80821E0185600B19A26 /* EmotionalState.swift */,
+				9BC6E80A21E018AB00B19A26 /* EmpathyListener.swift */,
+			);
+			path = Empathy;
+			sourceTree = "<group>";
+		};
 		9BD9BF6A21DFFB1B00D17882 = {
 			isa = PBXGroup;
 			children = (
@@ -89,18 +160,14 @@
 		9BD9BF7521DFFB1B00D17882 /* digital-empathy */ = {
 			isa = PBXGroup;
 			children = (
+				9BBE79DA21ED40F90062877B /* Infrastructure */,
+				9BBE79EE21ED56390062877B /* Empathy */,
+				9BBE79D921ED40D60062877B /* Main */,
+				9BBE79D721ED40C70062877B /* Setup */,
 				9BD9BF7621DFFB1B00D17882 /* AppDelegate.swift */,
-				9BD9BF7A21DFFB1B00D17882 /* Main.storyboard */,
-				9BC6E80821E0185600B19A26 /* EmotionalState.swift */,
-				9BC6E80A21E018AB00B19A26 /* EmpathyListener.swift */,
 				9BD9BF7D21DFFB1D00D17882 /* Assets.xcassets */,
 				9BD9BF7F21DFFB1D00D17882 /* LaunchScreen.storyboard */,
 				9BD9BF8221DFFB1D00D17882 /* Info.plist */,
-				9BD9BF9621DFFBDC00D17882 /* EmotionCell.swift */,
-				9BC6E80221E0088F00B19A26 /* EmotionsCollectionViewController.swift */,
-				9BC6E80421E00F7200B19A26 /* StretchyFooterViewController.swift */,
-				9BC6E80621E0119200B19A26 /* UIView+Layout.swift */,
-				9BBE79D321E423610062877B /* HomeIndicatorConstraint.swift */,
 			);
 			path = "digital-empathy";
 			sourceTree = "<group>";
@@ -200,8 +267,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BBE79DC21ED41360062877B /* Setup.storyboard in Resources */,
 				9BD9BF8121DFFB1D00D17882 /* LaunchScreen.storyboard in Resources */,
+				9BBE79E721ED46A70062877B /* HamburgerMenuItem.xib in Resources */,
 				9BD9BF7E21DFFB1D00D17882 /* Assets.xcassets in Resources */,
+				9BBE79E921ED46DE0062877B /* HamburgerMenu.xib in Resources */,
 				9BD9BF7C21DFFB1B00D17882 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,13 +291,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BD9BF7721DFFB1B00D17882 /* AppDelegate.swift in Sources */,
+				9BBE79F221ED59040062877B /* EmotionCell.swift in Sources */,
+				9BBE79E021ED43210062877B /* DateExtensions.swift in Sources */,
+				9BBE79F021ED58740062877B /* EmpathyTableViewController.swift in Sources */,
+				9BBE79EB21ED4BBA0062877B /* HamburgerMenuItem.swift in Sources */,
+				9BBE79DE21ED41DD0062877B /* UIApplication+Extensions.swift in Sources */,
+				9BBE79ED21ED4EDC0062877B /* BroadcastView.swift in Sources */,
 				9BC6E80721E0119200B19A26 /* UIView+Layout.swift in Sources */,
-				9BC6E80321E0088F00B19A26 /* EmotionsCollectionViewController.swift in Sources */,
+				9BBE79E421ED46110062877B /* MenuController.swift in Sources */,
 				9BBE79D421E423610062877B /* HomeIndicatorConstraint.swift in Sources */,
+				9BBE79E221ED45520062877B /* HeaderViewController.swift in Sources */,
 				9BC6E80521E00F7200B19A26 /* StretchyFooterViewController.swift in Sources */,
 				9BC6E80921E0185600B19A26 /* EmotionalState.swift in Sources */,
 				9BC6E80B21E018AB00B19A26 /* EmpathyListener.swift in Sources */,
-				9BD9BF9721DFFBDD00D17882 /* EmotionCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
