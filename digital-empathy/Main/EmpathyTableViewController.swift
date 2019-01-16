@@ -10,22 +10,65 @@ import UIKit
 
 class EmpathyTableViewController: UITableViewController {
 
+    private var hiddenTextField = UITextField(frame: CGRect.zero)
+
     var selectingEmotion: Bool = false
+    var emotions: [Emotion] = []
+    var name = "Me"
+
+    var emojis = ["😋","😁","😍",
+                  "🧐","🙂","😔",
+                  "😩","😡","😰"]
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         NotificationCenter.default.addObserver(self, selector: #selector(didDetectEmotion), name: NSNotification.Name("empathy-update"), object: nil)
 
         NotificationCenter.default.addObserver(self, selector: #selector(didStopBroadcasting), name: NSNotification.Name("broadcast-off"), object: nil)
 
+        // setup keyboard events
+        self.view.addSubview(self.hiddenTextField)
+        self.hideKeyboardOnTap()
+        self.hiddenTextField.addTarget(self, action: #selector(didEditName), for: .editingChanged)
+        self.hiddenTextField.returnKeyType = .done
+        self.hiddenTextField.delegate = self
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.update()
+    }
+    
+    func update() {
+        self.emotions = EmpathyListener.shared.emotions()
+        
+        self.tableView.reloadData()
     }
 
     @objc func didDetectEmotion() {
-        self.tableView.reloadData()
+        self.update()
     }
     
     @objc func didStopBroadcasting() {
+        self.update()
+    }
+    
+    @objc func didEditName() {
+        let str = self.hiddenTextField.text ?? "Me"
         
+        if str.count > 12 {
+            let index = str.index(str.startIndex, offsetBy: 12)
+            self.name = String(str[..<index])
+            self.hiddenTextField.text = self.name
+        } else {
+            self.name = str
+        }
+        
+        self.update()
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -38,12 +81,12 @@ class EmpathyTableViewController: UITableViewController {
         }
         
         if section == 0 && self.selectingEmotion == true {
-            return 1 + EmotionalState.emojis.count
+            return 1 + self.emojis.count
         }
 
         
         if section == 1 {
-            return EmpathyListener.shared.emotions.count
+            return self.emotions.count
         }
         
         return 0
@@ -65,8 +108,8 @@ class EmpathyTableViewController: UITableViewController {
         if indexPath.section == 0 && indexPath.row == 0 {
             let cell = self.tableView.dequeueReusableCell(withIdentifier: "emotion-cell") as! EmotionCell
             
-            cell.emojiLabel.text = EmotionalState.emojis[EmotionalState.shared.emojiIndex]
-            cell.nameLabel.text = ""
+            cell.emojiLabel.text = EmpathyBroadcast.shared.emoji ?? "😑"
+            cell.nameLabel.text = self.name
             
             return cell
         }
@@ -74,7 +117,7 @@ class EmpathyTableViewController: UITableViewController {
         if indexPath.section == 0 && indexPath.row > 0 {
             let cell = self.tableView.dequeueReusableCell(withIdentifier: "emotion-cell") as! EmotionCell
             
-            cell.emojiLabel.text = EmotionalState.emojis[indexPath.row - 1]
+            cell.emojiLabel.text = self.emojis[indexPath.row - 1]
             cell.nameLabel.text = ""
             
             return cell
@@ -84,9 +127,9 @@ class EmpathyTableViewController: UITableViewController {
         if indexPath.section == 1 {
             let cell = self.tableView.dequeueReusableCell(withIdentifier: "emotion-cell") as! EmotionCell
             
-            let index = Int((EmpathyListener.shared.emotions.map { $1 })[indexPath.row])
-            cell.emojiLabel.text = EmotionalState.emojis[index ?? 0]
-            cell.nameLabel.text = ""
+            cell.emojiLabel.text = self.emotions[indexPath.row].emoji
+            cell.nameLabel.text = self.emotions[indexPath.row].peripheral.identifier.uuidString
+
             cell.selectionStyle = .none
             
             return cell
@@ -94,76 +137,34 @@ class EmpathyTableViewController: UITableViewController {
         
         return UITableViewCell(style: .default, reuseIdentifier: "default")
     }
-        
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 && indexPath.section == 0 {
+        if indexPath.row == 0 && indexPath.section == 0 && self.selectingEmotion == false {
             self.selectingEmotion = true
-            self.tableView.reloadData()
+            self.update()
+        }
+        
+        else if indexPath.row == 0 && indexPath.section == 0 && self.selectingEmotion == true {
+            self.hiddenTextField.becomeFirstResponder()
         }
 
-        if indexPath.row > 0 && indexPath.section == 0 {
+        else if indexPath.row > 0 && indexPath.section == 0 {
             self.selectingEmotion = false
-            EmotionalState.shared.emojiIndex = indexPath.row - 1
             
-            self.tableView.reloadData()
-        }
+            EmpathyBroadcast.shared.updateValue( self.emojis[ indexPath.row - 1 ] )
+            EmpathyBroadcast.shared.startBroadcasting()
 
-//        EmotionalState.shared.startBroadcasting()
+            self.update()
+        }
     }
     
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+}
 
-        // Configure the cell...
-
-        return cell
+extension EmpathyTableViewController: UITextFieldDelegate {
+    
+    internal func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        return false
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

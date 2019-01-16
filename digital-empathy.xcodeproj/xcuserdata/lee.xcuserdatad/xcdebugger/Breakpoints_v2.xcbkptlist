@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "digital-empathy/Empathy/EmpathyListener.swift"
-            timestampString = "569207399.93341"
+            filePath = "digital-empathy/Empathy/Broadcast.swift"
+            timestampString = "569294123.049682"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
-            landmarkName = "centralManager(_:didDisconnectPeripheral:error:)"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "updateValue(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

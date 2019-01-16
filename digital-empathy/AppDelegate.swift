@@ -15,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        EmpathyBroadcast.shared.updateValue("💩LeeLee")
         EmpathyListener.shared.listen()
         
         var vc:UIViewController!

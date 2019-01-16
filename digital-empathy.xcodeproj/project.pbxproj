@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9BAFE81B21EEB9B600312497 /* EmpathyBroadcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAFE81A21EEB9B600312497 /* EmpathyBroadcast.swift */; };
+		9BAFE81D21EEBDFD00312497 /* EmpathyNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAFE81C21EEBDFD00312497 /* EmpathyNotifier.swift */; };
+		9BAFE81F21EEBF0A00312497 /* Walkthrough1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAFE81E21EEBF0A00312497 /* Walkthrough1ViewController.swift */; };
+		9BAFE82121EEBF1400312497 /* Walkthrough2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAFE82021EEBF1400312497 /* Walkthrough2ViewController.swift */; };
+		9BAFE82321EEC3FE00312497 /* Emotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAFE82221EEC3FE00312497 /* Emotion.swift */; };
+		9BAFE82521EEC6B900312497 /* CoreBluetooth+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAFE82421EEC6B900312497 /* CoreBluetooth+Extensions.swift */; };
+		9BAFE82721EECCEC00312497 /* UIViewController+Essentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAFE82621EECCEC00312497 /* UIViewController+Essentials.swift */; };
 		9BBE79D421E423610062877B /* HomeIndicatorConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBE79D321E423610062877B /* HomeIndicatorConstraint.swift */; };
 		9BBE79DC21ED41360062877B /* Setup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BBE79DB21ED41360062877B /* Setup.storyboard */; };
 		9BBE79DE21ED41DD0062877B /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBE79DD21ED41DD0062877B /* UIApplication+Extensions.swift */; };
@@ -21,7 +28,6 @@
 		9BBE79F221ED59040062877B /* EmotionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBE79F121ED59040062877B /* EmotionCell.swift */; };
 		9BC6E80521E00F7200B19A26 /* StretchyFooterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC6E80421E00F7200B19A26 /* StretchyFooterViewController.swift */; };
 		9BC6E80721E0119200B19A26 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC6E80621E0119200B19A26 /* UIView+Layout.swift */; };
-		9BC6E80921E0185600B19A26 /* EmotionalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC6E80821E0185600B19A26 /* EmotionalState.swift */; };
 		9BC6E80B21E018AB00B19A26 /* EmpathyListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC6E80A21E018AB00B19A26 /* EmpathyListener.swift */; };
 		9BD9BF7721DFFB1B00D17882 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD9BF7621DFFB1B00D17882 /* AppDelegate.swift */; };
 		9BD9BF7C21DFFB1B00D17882 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BD9BF7A21DFFB1B00D17882 /* Main.storyboard */; };
@@ -41,6 +47,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9BAFE81A21EEB9B600312497 /* EmpathyBroadcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmpathyBroadcast.swift; sourceTree = "<group>"; };
+		9BAFE81C21EEBDFD00312497 /* EmpathyNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmpathyNotifier.swift; sourceTree = "<group>"; };
+		9BAFE81E21EEBF0A00312497 /* Walkthrough1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walkthrough1ViewController.swift; sourceTree = "<group>"; };
+		9BAFE82021EEBF1400312497 /* Walkthrough2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walkthrough2ViewController.swift; sourceTree = "<group>"; };
+		9BAFE82221EEC3FE00312497 /* Emotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emotion.swift; sourceTree = "<group>"; };
+		9BAFE82421EEC6B900312497 /* CoreBluetooth+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreBluetooth+Extensions.swift"; sourceTree = "<group>"; };
+		9BAFE82621EECCEC00312497 /* UIViewController+Essentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Essentials.swift"; sourceTree = "<group>"; };
 		9BBE79D321E423610062877B /* HomeIndicatorConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeIndicatorConstraint.swift; sourceTree = "<group>"; };
 		9BBE79DB21ED41360062877B /* Setup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setup.storyboard; sourceTree = "<group>"; };
 		9BBE79DD21ED41DD0062877B /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
@@ -90,6 +103,8 @@
 			isa = PBXGroup;
 			children = (
 				9BBE79DB21ED41360062877B /* Setup.storyboard */,
+				9BAFE81E21EEBF0A00312497 /* Walkthrough1ViewController.swift */,
+				9BAFE82021EEBF1400312497 /* Walkthrough2ViewController.swift */,
 			);
 			path = Setup;
 			sourceTree = "<group>";
@@ -115,6 +130,8 @@
 				9BBE79D321E423610062877B /* HomeIndicatorConstraint.swift */,
 				9BBE79DD21ED41DD0062877B /* UIApplication+Extensions.swift */,
 				9BBE79DF21ED43210062877B /* DateExtensions.swift */,
+				9BAFE82421EEC6B900312497 /* CoreBluetooth+Extensions.swift */,
+				9BAFE82621EECCEC00312497 /* UIViewController+Essentials.swift */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -135,6 +152,8 @@
 			children = (
 				9BC6E80821E0185600B19A26 /* EmotionalState.swift */,
 				9BC6E80A21E018AB00B19A26 /* EmpathyListener.swift */,
+				9BAFE81A21EEB9B600312497 /* EmpathyBroadcast.swift */,
+				9BAFE81C21EEBDFD00312497 /* EmpathyNotifier.swift */,
 			);
 			path = Empathy;
 			sourceTree = "<group>";
@@ -142,6 +161,7 @@
 		9BD9BF6A21DFFB1B00D17882 = {
 			isa = PBXGroup;
 			children = (
+				9BAFE82221EEC3FE00312497 /* Emotion.swift */,
 				9BD9BF7521DFFB1B00D17882 /* digital-empathy */,
 				9BD9BF8A21DFFB1D00D17882 /* digital-empathyTests */,
 				9BD9BF7421DFFB1B00D17882 /* Products */,
@@ -290,20 +310,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BAFE82321EEC3FE00312497 /* Emotion.swift in Sources */,
+				9BAFE82121EEBF1400312497 /* Walkthrough2ViewController.swift in Sources */,
 				9BD9BF7721DFFB1B00D17882 /* AppDelegate.swift in Sources */,
 				9BBE79F221ED59040062877B /* EmotionCell.swift in Sources */,
 				9BBE79E021ED43210062877B /* DateExtensions.swift in Sources */,
+				9BAFE82721EECCEC00312497 /* UIViewController+Essentials.swift in Sources */,
 				9BBE79F021ED58740062877B /* EmpathyTableViewController.swift in Sources */,
 				9BBE79EB21ED4BBA0062877B /* HamburgerMenuItem.swift in Sources */,
 				9BBE79DE21ED41DD0062877B /* UIApplication+Extensions.swift in Sources */,
 				9BBE79ED21ED4EDC0062877B /* BroadcastView.swift in Sources */,
 				9BC6E80721E0119200B19A26 /* UIView+Layout.swift in Sources */,
+				9BAFE81D21EEBDFD00312497 /* EmpathyNotifier.swift in Sources */,
 				9BBE79E421ED46110062877B /* MenuController.swift in Sources */,
+				9BAFE81F21EEBF0A00312497 /* Walkthrough1ViewController.swift in Sources */,
+				9BAFE81B21EEB9B600312497 /* EmpathyBroadcast.swift in Sources */,
 				9BBE79D421E423610062877B /* HomeIndicatorConstraint.swift in Sources */,
 				9BBE79E221ED45520062877B /* HeaderViewController.swift in Sources */,
 				9BC6E80521E00F7200B19A26 /* StretchyFooterViewController.swift in Sources */,
-				9BC6E80921E0185600B19A26 /* EmotionalState.swift in Sources */,
 				9BC6E80B21E018AB00B19A26 /* EmpathyListener.swift in Sources */,
+				9BAFE82521EEC6B900312497 /* CoreBluetooth+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

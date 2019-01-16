@@ -41,10 +41,10 @@ class HeaderViewController: UIViewController {
     @objc private func didTouchBroadcast(_ sender: Any) {
         if self.rightButtonImage.on {
             self.rightButtonImage.on = false
-            EmotionalState.shared.stopBroadcasting()
+            EmpathyBroadcast.shared.stopBroadcasting()
         } else {
             self.rightButtonImage.on = true
-            EmotionalState.shared.startBroadcasting()
+            EmpathyBroadcast.shared.startBroadcasting()
         }
     }
     
