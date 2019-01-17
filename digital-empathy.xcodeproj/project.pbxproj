@@ -149,6 +149,7 @@
 		9BBE79EE21ED56390062877B /* Empathy */ = {
 			isa = PBXGroup;
 			children = (
+				9BAFE82221EEC3FE00312497 /* Emotion.swift */,
 				9BC6E80A21E018AB00B19A26 /* EmpathyListener.swift */,
 				9BAFE81A21EEB9B600312497 /* EmpathyBroadcast.swift */,
 				9BAFE81C21EEBDFD00312497 /* EmpathyNotifier.swift */,
@@ -159,7 +160,6 @@
 		9BD9BF6A21DFFB1B00D17882 = {
 			isa = PBXGroup;
 			children = (
-				9BAFE82221EEC3FE00312497 /* Emotion.swift */,
 				9BD9BF7521DFFB1B00D17882 /* digital-empathy */,
 				9BD9BF8A21DFFB1D00D17882 /* digital-empathyTests */,
 				9BD9BF7421DFFB1B00D17882 /* Products */,
