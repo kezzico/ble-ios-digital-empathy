@@ -8,13 +8,12 @@
 
 import UIKit
 
-class EmpathyTableViewController: UITableViewController {
+class MainViewController: UITableViewController {
 
     private var hiddenTextField = UITextField(frame: CGRect.zero)
 
     var selectingEmotion: Bool = false
     var emotions: [Emotion] = []
-    var name = "Me"
 
     var emojis = ["😋","😁","😍",
                   "🧐","🙂","😔",
@@ -25,16 +24,18 @@ class EmpathyTableViewController: UITableViewController {
         super.viewDidLoad()
         
         NotificationCenter.default.addObserver(self, selector: #selector(didDetectEmotion), name: NSNotification.Name("empathy-update"), object: nil)
-
         NotificationCenter.default.addObserver(self, selector: #selector(didStopBroadcasting), name: NSNotification.Name("broadcast-off"), object: nil)
+        EmpathyBroadcast.shared.startBroadcasting()
 
         // setup keyboard events
         self.view.addSubview(self.hiddenTextField)
         self.hideKeyboardOnTap()
         self.hiddenTextField.addTarget(self, action: #selector(didEditName), for: .editingChanged)
+        self.hiddenTextField.addTarget(self, action: #selector(didChangeName), for: .editingDidEnd)
+        self.hiddenTextField.addTarget(self, action: #selector(willChangeName), for: .editingDidBegin)
         self.hiddenTextField.returnKeyType = .done
         self.hiddenTextField.delegate = self
-        
+        //
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,19 +57,27 @@ class EmpathyTableViewController: UITableViewController {
     @objc func didStopBroadcasting() {
         self.update()
     }
+
+    @objc func willChangeName() {
+        self.hiddenTextField.text = Emotion.me.name
+    }
     
     @objc func didEditName() {
-        let str = self.hiddenTextField.text ?? "Me"
+        var name = self.hiddenTextField.text ?? ""
         
-        if str.count > 12 {
-            let index = str.index(str.startIndex, offsetBy: 12)
-            self.name = String(str[..<index])
-            self.hiddenTextField.text = self.name
-        } else {
-            self.name = str
+        if name.count > Emotion.maxNameLength {
+            let index = name.index(name.startIndex, offsetBy: Emotion.maxNameLength)
+            name = String(name[..<index])
+            self.hiddenTextField.text = name
         }
         
+        Emotion.me.name = name
+
         self.update()
+    }
+    
+    @objc func didChangeName() {
+        EmpathyBroadcast.shared.updateValue(Emotion.me)
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -105,15 +114,16 @@ class EmpathyTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        /// My Emotion Cell
         if indexPath.section == 0 && indexPath.row == 0 {
             let cell = self.tableView.dequeueReusableCell(withIdentifier: "emotion-cell") as! EmotionCell
             
-            cell.emojiLabel.text = EmpathyBroadcast.shared.emoji ?? "😑"
-            cell.nameLabel.text = self.name
+            cell.emotion = Emotion.me
             
             return cell
         }
- 	       
+        
+        // Select Emotion Cell
         if indexPath.section == 0 && indexPath.row > 0 {
             let cell = self.tableView.dequeueReusableCell(withIdentifier: "emotion-cell") as! EmotionCell
             
@@ -124,12 +134,11 @@ class EmpathyTableViewController: UITableViewController {
             
         }
         
+        // Other Emotion Cell
         if indexPath.section == 1 {
             let cell = self.tableView.dequeueReusableCell(withIdentifier: "emotion-cell") as! EmotionCell
             
-            cell.emojiLabel.text = self.emotions[indexPath.row].emoji
-            cell.nameLabel.text = self.emotions[indexPath.row].peripheral.identifier.uuidString
-
+            cell.emotion = self.emotions[indexPath.row]
             cell.selectionStyle = .none
             
             return cell
@@ -151,8 +160,8 @@ class EmpathyTableViewController: UITableViewController {
         else if indexPath.row > 0 && indexPath.section == 0 {
             self.selectingEmotion = false
             
-            EmpathyBroadcast.shared.updateValue( self.emojis[ indexPath.row - 1 ] )
-            EmpathyBroadcast.shared.startBroadcasting()
+            Emotion.me.emoji = self.emojis[ indexPath.row - 1 ]
+            EmpathyBroadcast.shared.updateValue( Emotion.me )
 
             self.update()
         }
@@ -160,7 +169,7 @@ class EmpathyTableViewController: UITableViewController {
     
 }
 
-extension EmpathyTableViewController: UITextFieldDelegate {
+extension MainViewController: UITextFieldDelegate {
     
     internal func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()

@@ -30,6 +30,7 @@ class EmpathyListener: NSObject {
         .map {
             return $0.value
         }
+        
     }
     
     private func update(_ peripheral: CBPeripheral) {
@@ -40,21 +41,18 @@ class EmpathyListener: NSObject {
         
         guard let data = characteristic.value else { return }
         
-        guard let emoji = String(bytes: data, encoding: .nonLossyASCII) else { return }
-        
         guard let emotion = peripheralMap[peripheral.identifier.uuidString] else { return }
-        
-        guard emotion.emoji != emoji else { return }
-        
-        emotion.emoji = emoji
+        print("BLE: got charactreristic value \(String(bytes: data, encoding: .nonLossyASCII))")
+
+        guard emotion.update(data) else { return }
         
         NotificationCenter.default.post(name: NSNotification.Name("empathy-update"), object: nil)
     }
-    
 }
 
 extension EmpathyListener: CBCentralManagerDelegate {
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
+        print("BLE: update state \(self.centralManager.state)")
         guard self.centralManager.state == .poweredOn else {
             return
         }
@@ -63,6 +61,7 @@ extension EmpathyListener: CBCentralManagerDelegate {
     }
     
     internal func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
+        print("BLE: peripheral found \(peripheral.identifier.uuidString.prefix(4))")
         peripheral.delegate = self
 
         self.peripheralMap[peripheral.identifier.uuidString] = Emotion(peripheral: peripheral, RSSI: RSSI)
@@ -71,34 +70,61 @@ extension EmpathyListener: CBCentralManagerDelegate {
     }
     
     internal func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
+        print("BLE: peripheral connected \(peripheral.identifier.uuidString.prefix(4))")
         peripheral.discoverServices([serviceUUID])
     }
 
     internal func centralManager(_ central: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: Error?) {
+        print("BLE: peripheral failed to connect \(peripheral.identifier.uuidString.prefix(4))")
         if let err = error {
             print("\(err.localizedDescription)")
         }
+        
+        // Q: will core-bluetooth try to reconnect automatically?
     }
     
     internal func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
+        print("BLE: peripheral did disconnect \(peripheral.identifier.uuidString.prefix(4))")
+        
         if let err = error {
-            print("\(err.localizedDescription)")
+            print("BLE: \(err.localizedDescription)")
             return
         }
         
-        self.peripheralMap.removeValue(forKey: peripheral.identifier.uuidString)
+        let uuid = peripheral.identifier.uuidString
+        
+        self.peripheralMap.removeValue(forKey: uuid)
 
         NotificationCenter.default.post(name: NSNotification.Name("empathy-update"), object: nil)
     }
+    
+    //
+    // called when connected phone closes out the app
+    internal func peripheral(_ peripheral: CBPeripheral, didModifyServices invalidatedServices: [CBService]) {
+        print("BLE: peripheral services modified \(peripheral.identifier.uuidString.prefix(4))")
+        
+        let uuid = peripheral.identifier.uuidString
 
+        guard let emotion = self.peripheralMap[uuid] else { return }
+        
+        guard let peripheral = emotion.peripheral else { return }
+
+        self.peripheralMap.removeValue(forKey: uuid)
+        self.centralManager.cancelPeripheralConnection(peripheral)
+        
+        NotificationCenter.default.post(name: NSNotification.Name("empathy-update"), object: nil)
+
+    }
 }
 
 // MARK: - PERIPHERAL DELEGATE
 extension EmpathyListener: CBPeripheralDelegate {
     
     internal func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
+        print("BLE: discovered peripheral service \(peripheral.identifier.uuidString.prefix(4))")
+
         if let err = error {
-            print("\(err.localizedDescription)")
+            print("BLE: \(err.localizedDescription)")
             return
         }
 
@@ -108,24 +134,27 @@ extension EmpathyListener: CBPeripheralDelegate {
     }
     
     internal func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
+        print("BLE: discovered peripheral characteristic \(peripheral.identifier.uuidString.prefix(4))")
+
         if let err = error {
-            print("\(err.localizedDescription)")
+            print("BLE: \(err.localizedDescription)")
             return
         }
         
         guard let characteristic = service.characteristic(self.characteristicUUID) else { return }
-
+        
         peripheral.setNotifyValue(true, for: characteristic)
-
+        
         update(peripheral)
     }
     
     internal func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
         if let err = error {
-            print("\(err.localizedDescription)")
+            print("BLE: \(err.localizedDescription)")
             return
         }
         
         update(peripheral)
     }
 }
+

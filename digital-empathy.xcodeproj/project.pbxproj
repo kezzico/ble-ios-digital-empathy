@@ -24,7 +24,7 @@
 		9BBE79E921ED46DE0062877B /* HamburgerMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BBE79E821ED46DE0062877B /* HamburgerMenu.xib */; };
 		9BBE79EB21ED4BBA0062877B /* HamburgerMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBE79EA21ED4BBA0062877B /* HamburgerMenuItem.swift */; };
 		9BBE79ED21ED4EDC0062877B /* BroadcastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBE79EC21ED4EDC0062877B /* BroadcastView.swift */; };
-		9BBE79F021ED58740062877B /* EmpathyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBE79EF21ED58740062877B /* EmpathyTableViewController.swift */; };
+		9BBE79F021ED58740062877B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBE79EF21ED58740062877B /* MainViewController.swift */; };
 		9BBE79F221ED59040062877B /* EmotionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBE79F121ED59040062877B /* EmotionCell.swift */; };
 		9BC6E80521E00F7200B19A26 /* StretchyFooterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC6E80421E00F7200B19A26 /* StretchyFooterViewController.swift */; };
 		9BC6E80721E0119200B19A26 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC6E80621E0119200B19A26 /* UIView+Layout.swift */; };
@@ -64,11 +64,10 @@
 		9BBE79E821ED46DE0062877B /* HamburgerMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HamburgerMenu.xib; sourceTree = "<group>"; };
 		9BBE79EA21ED4BBA0062877B /* HamburgerMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerMenuItem.swift; sourceTree = "<group>"; };
 		9BBE79EC21ED4EDC0062877B /* BroadcastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcastView.swift; sourceTree = "<group>"; };
-		9BBE79EF21ED58740062877B /* EmpathyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmpathyTableViewController.swift; sourceTree = "<group>"; };
+		9BBE79EF21ED58740062877B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		9BBE79F121ED59040062877B /* EmotionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionCell.swift; sourceTree = "<group>"; };
 		9BC6E80421E00F7200B19A26 /* StretchyFooterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StretchyFooterViewController.swift; sourceTree = "<group>"; };
 		9BC6E80621E0119200B19A26 /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
-		9BC6E80821E0185600B19A26 /* EmotionalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionalState.swift; sourceTree = "<group>"; };
 		9BC6E80A21E018AB00B19A26 /* EmpathyListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmpathyListener.swift; sourceTree = "<group>"; };
 		9BD9BF7321DFFB1B00D17882 /* digital-empathy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "digital-empathy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BD9BF7621DFFB1B00D17882 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -114,8 +113,8 @@
 			children = (
 				9BD9BF7A21DFFB1B00D17882 /* Main.storyboard */,
 				9BBE79E121ED45520062877B /* HeaderViewController.swift */,
+				9BBE79EF21ED58740062877B /* MainViewController.swift */,
 				9BBE79EC21ED4EDC0062877B /* BroadcastView.swift */,
-				9BBE79EF21ED58740062877B /* EmpathyTableViewController.swift */,
 				9BBE79F121ED59040062877B /* EmotionCell.swift */,
 			);
 			path = Main;
@@ -150,7 +149,6 @@
 		9BBE79EE21ED56390062877B /* Empathy */ = {
 			isa = PBXGroup;
 			children = (
-				9BC6E80821E0185600B19A26 /* EmotionalState.swift */,
 				9BC6E80A21E018AB00B19A26 /* EmpathyListener.swift */,
 				9BAFE81A21EEB9B600312497 /* EmpathyBroadcast.swift */,
 				9BAFE81C21EEBDFD00312497 /* EmpathyNotifier.swift */,
@@ -316,7 +314,7 @@
 				9BBE79F221ED59040062877B /* EmotionCell.swift in Sources */,
 				9BBE79E021ED43210062877B /* DateExtensions.swift in Sources */,
 				9BAFE82721EECCEC00312497 /* UIViewController+Essentials.swift in Sources */,
-				9BBE79F021ED58740062877B /* EmpathyTableViewController.swift in Sources */,
+				9BBE79F021ED58740062877B /* MainViewController.swift in Sources */,
 				9BBE79EB21ED4BBA0062877B /* HamburgerMenuItem.swift in Sources */,
 				9BBE79DE21ED41DD0062877B /* UIApplication+Extensions.swift in Sources */,
 				9BBE79ED21ED4EDC0062877B /* BroadcastView.swift in Sources */,

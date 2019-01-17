@@ -19,15 +19,11 @@ class EmpathyBroadcast: NSObject {
     private var emojiService: CBMutableService!
     private var emojiCharacteristic: CBMutableCharacteristic!
 
-    var emoji: String?
-
-    func updateValue(_ emoji: String ) {
-        self.emoji = emoji
-        
+    func updateValue(_ emotion: Emotion ) {
         guard self.peripheral != nil else { return }
         guard let emojiCharacteristic = self.emojiCharacteristic else { return }
         
-        if let data = emoji.data(using: String.Encoding.nonLossyASCII) {            
+        if let data = emotion.encode() {
             self.peripheral.updateValue(data, for: emojiCharacteristic, onSubscribedCentrals: nil)
         }
 
@@ -40,10 +36,12 @@ class EmpathyBroadcast: NSObject {
     }
     
     func requestPermission() {
-        
+        // TODO: request authorization for core bluetooth peripheral
     }
     
     func stopBroadcasting() {
+        UserDefaults.standard.set(true, forKey: "broadcast-off")
+        
         NotificationCenter.default.post(name: NSNotification.Name("broadcast-off"), object: nil)
         
         guard peripheral.state == .poweredOn else { return }
@@ -51,12 +49,9 @@ class EmpathyBroadcast: NSObject {
     }
     
     func startBroadcasting() {
-        guard peripheral.state == .poweredOn else {
-            NotificationCenter.default.post(name: NSNotification.Name("broadcast-off"), object: nil)
-            return
-        }
+        UserDefaults.standard.set(false, forKey: "broadcast-off")
         
-        guard self.emoji != nil else {
+        guard peripheral.state == .poweredOn else {
             NotificationCenter.default.post(name: NSNotification.Name("broadcast-off"), object: nil)
             return
         }
@@ -94,6 +89,11 @@ extension EmpathyBroadcast: CBPeripheralManagerDelegate {
     }
     
     func peripheralManager(_ peripheral: CBPeripheralManager, didAdd service: CBService, error: Error?) {
-        self.startBroadcasting()
+        
+        if UserDefaults.standard.bool(forKey: "broadcast-off") == false {
+            self.startBroadcasting()
+        }
+        
+        self.updateValue(Emotion.me)
     }
 }

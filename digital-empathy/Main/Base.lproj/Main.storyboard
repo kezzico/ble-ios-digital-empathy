@@ -438,69 +438,34 @@
             </objects>
             <point key="canvasLocation" x="923" y="1292"/>
         </scene>
-        <!--Empathy Table View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="E2U-Rz-WjM">
             <objects>
-                <tableViewController id="8MW-EI-GkB" customClass="EmpathyTableViewController" customModule="digital_empathy" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="8MW-EI-GkB" customClass="MainViewController" customModule="digital_empathy" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="evB-b7-gfV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="my-emotion-cell" id="64t-CD-4ZI">
-                                <rect key="frame" x="0.0" y="55.333333333333343" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="64t-CD-4ZI" id="rWG-pP-bAw">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1" verticalHuggingPriority="1" text="😑" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="89o-OY-AKZ">
-                                            <rect key="frame" x="348" y="-0.33333333333333215" width="44" height="44.333333333333329"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="44" id="FLN-Pn-Xiv"/>
-                                                <constraint firstAttribute="height" constant="44" id="ctI-3R-lCd"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="33"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Off" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eA8-Fd-wVi">
-                                            <rect key="frame" x="22" y="0.0" width="293" height="43.666666666666664"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="eA8-Fd-wVi" firstAttribute="top" secondItem="rWG-pP-bAw" secondAttribute="top" id="3Jw-me-YCq"/>
-                                        <constraint firstAttribute="trailing" secondItem="89o-OY-AKZ" secondAttribute="trailing" constant="22" id="AoM-Ws-jIw"/>
-                                        <constraint firstItem="89o-OY-AKZ" firstAttribute="centerY" secondItem="rWG-pP-bAw" secondAttribute="centerY" id="Rdx-Zo-cQn"/>
-                                        <constraint firstItem="89o-OY-AKZ" firstAttribute="leading" secondItem="eA8-Fd-wVi" secondAttribute="trailing" constant="33" id="kql-uj-nVQ"/>
-                                        <constraint firstItem="eA8-Fd-wVi" firstAttribute="leading" secondItem="rWG-pP-bAw" secondAttribute="leading" constant="22" id="wy3-GV-k2n"/>
-                                        <constraint firstAttribute="bottom" secondItem="eA8-Fd-wVi" secondAttribute="bottom" id="z4f-KL-a0i"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                            </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="emotion-cell" id="3j6-1k-3ks" customClass="EmotionCell" customModule="digital_empathy" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="99.333333333333343" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="55.333333333333343" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3j6-1k-3ks" id="JMf-rC-cDR">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t2p-gc-VEj">
-                                            <rect key="frame" x="22" y="0.0" width="293" height="44.333333333333336"/>
+                                            <rect key="frame" x="22" y="0.0" width="293" height="44"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="44" id="9yL-rP-Bhk"/>
+                                                <constraint firstAttribute="height" constant="44" id="eML-ww-vJN"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1" verticalHuggingPriority="1" text="😑" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EBY-0o-Qr6">
-                                            <rect key="frame" x="348" y="0.0" width="44" height="44.333333333333336"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1" verticalHuggingPriority="1" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" text="😑" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EBY-0o-Qr6">
+                                            <rect key="frame" x="348" y="0.0" width="44" height="39.666666666666664"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="44" id="tym-Gc-pqM"/>
                                                 <constraint firstAttribute="width" constant="44" id="wM0-gm-gNE"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="33"/>
@@ -532,7 +497,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SUx-hi-Fqv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1607" y="1291"/>
+            <point key="canvasLocation" x="1605.7971014492755" y="1290.4891304347827"/>
         </scene>
     </scenes>
     <resources>

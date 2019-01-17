@@ -25,9 +25,6 @@ class HeaderViewController: UIViewController {
         self.leftButton.addTarget(self, action: #selector(didTouchHamburger(_:)), for: .touchUpInside)
         self.rightButton.addTarget(self, action: #selector(didTouchBroadcast(_:)), for: .touchUpInside)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(didStartBroadcasting), name: NSNotification.Name("broadcast-on"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(didStopBroadcasting), name: NSNotification.Name("broadcast-off"), object: nil)
-        // Do any additional setup after loading the view.
     }
     
     deinit {
@@ -47,13 +44,4 @@ class HeaderViewController: UIViewController {
             EmpathyBroadcast.shared.startBroadcasting()
         }
     }
-    
-    @objc func didStartBroadcasting() {
-        self.rightButtonImage.on = true
-    }
-    
-    @objc func didStopBroadcasting() {
-        self.rightButtonImage.on = false
-    }
-
 }

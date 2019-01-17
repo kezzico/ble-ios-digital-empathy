@@ -26,10 +26,26 @@ class BroadcastView: UIImageView {
         }
     }
     
-    deinit {
-        self.stopAnimating()
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(didStartBroadcasting), name: NSNotification.Name("broadcast-on"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(didStopBroadcasting), name: NSNotification.Name("broadcast-off"), object: nil)
     }
     
+    deinit {
+        self.stopAnimating()
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc private func didStartBroadcasting() {
+        self.on = true
+    }
+    
+    @objc private func didStopBroadcasting() {
+        self.on = false
+    }
+
     override func startAnimating() {
         var animIndex = 0
         
@@ -43,14 +59,5 @@ class BroadcastView: UIImageView {
         guard timer != nil else { return }
         timer.invalidate()
     }
-    
-    
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
 
 }
