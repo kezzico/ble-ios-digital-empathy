@@ -46,6 +46,7 @@ class EmpathyBroadcast: NSObject {
         
         guard peripheral.state == .poweredOn else { return }
         self.peripheral.stopAdvertising()
+        self.peripheral.removeAllServices()
     }
     
     func startBroadcasting() {
@@ -64,7 +65,6 @@ class EmpathyBroadcast: NSObject {
         
         NotificationCenter.default.post(name: NSNotification.Name("broadcast-on"), object: nil)
     }
-    
 }
 
 
@@ -88,12 +88,21 @@ extension EmpathyBroadcast: CBPeripheralManagerDelegate {
         self.peripheral.add(self.emojiService)
     }
     
+    func peripheralManager(_ peripheral: CBPeripheralManager, central: CBCentral, didSubscribeTo characteristic: CBCharacteristic) {
+        print("subscribe")
+        self.updateValue(Emotion.me)
+    }
+    
     func peripheralManager(_ peripheral: CBPeripheralManager, didAdd service: CBService, error: Error?) {
         
         if UserDefaults.standard.bool(forKey: "broadcast-off") == false {
             self.startBroadcasting()
         }
         
-        self.updateValue(Emotion.me)
+        // update value to overcome nil value read on central manager
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+            self.updateValue(Emotion.me)
+        }
     }
+    
 }

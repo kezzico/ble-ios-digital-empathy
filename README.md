@@ -10,3 +10,6 @@ Digital Empathy is built on top of these limitations. 29 bytes is enough to shar
 ## ISSUES:
 
 peripherals are rediscovered and reconnected repeatedly. ( see logs )
+
+
+https://testflight.apple.com/join/eOoPgV60

@@ -15,7 +15,7 @@ class Emotion {
     
     var signal:NSNumber
     var peripheral:CBPeripheral?
-    
+    var isInitialized: Bool { return self.emoji != "😑" }
     init(peripheral: CBPeripheral, RSSI: NSNumber) {
         self.peripheral = peripheral
         self.signal = RSSI

@@ -27,6 +27,9 @@ class EmpathyListener: NSObject {
         .sorted {
             return $0.value.signal.floatValue > $1.value.signal.floatValue
         }
+        .filter {
+            return $0.value.isInitialized
+        }
         .map {
             return $0.value
         }
@@ -42,7 +45,6 @@ class EmpathyListener: NSObject {
         guard let data = characteristic.value else { return }
         
         guard let emotion = peripheralMap[peripheral.identifier.uuidString] else { return }
-        print("BLE: got charactreristic value \(String(bytes: data, encoding: .nonLossyASCII))")
 
         guard emotion.update(data) else { return }
         
@@ -61,10 +63,14 @@ extension EmpathyListener: CBCentralManagerDelegate {
     }
     
     internal func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
-        print("BLE: peripheral found \(peripheral.identifier.uuidString.prefix(4))")
-        peripheral.delegate = self
+        let uuid = peripheral.identifier.uuidString
+        print("BLE: peripheral found \(uuid.prefix(4))")
+        
+        guard self.peripheralMap[uuid] == nil else { return }
+        
+        self.peripheralMap[uuid] = Emotion(peripheral: peripheral, RSSI: RSSI)
 
-        self.peripheralMap[peripheral.identifier.uuidString] = Emotion(peripheral: peripheral, RSSI: RSSI)
+        peripheral.delegate = self
 
         self.centralManager.connect(peripheral, options: nil)
     }
@@ -149,6 +155,7 @@ extension EmpathyListener: CBPeripheralDelegate {
     }
     
     internal func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
+        print("BLE: notify characteristic value change")
         if let err = error {
             print("BLE: \(err.localizedDescription)")
             return
